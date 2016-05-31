@@ -145,6 +145,7 @@ object TpchQuery {
   def executeQuery(queryNo: Int): Unit = {
     assert(queryNo >= 1 && queryNo <= 22, "Invalid query number")
     Class.forName(f"main.scala.Q${queryNo}%02d").newInstance.asInstanceOf[{ def execute }].execute
+    Class.forName(f"main.scala.Q${queryNo}%02d").newInstance.asInstanceOf[{ def execute }].execute
   }
 
   def main(args: Array[String]): Unit = {
